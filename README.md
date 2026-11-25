@@ -112,14 +112,4 @@ from. Disabled mods are renamed to `*.jar.disabled`, which Fabric ignores.
 - **Profiles**: `-XX:+UseCompactObjectHeaders` and generational Shenandoah are standard
   in Java 25. Treat the flags as starting points and benchmark frame times in Phase 3.
 
-## Next: Phase 1
 
-1. Register an Azure app (personal Microsoft accounts, public client flows on) and apply
-   for Minecraft API access at https://aka.ms/mce-reviewappid. Approval takes time, so
-   start now.
-2. Rust `auth.rs`: device-code flow → Xbox Live → XSTS → `login_with_xbox` → profile.
-   Keep the refresh token in the OS keychain (`keyring` crate).
-3. Rust `launch.rs`: version manifest → 26.3 JSON → libraries, assets and natives (26.3
-   uses SDL, not GLFW: follow the JSON) → Fabric profile from `meta.fabricmc.net` → build
-   the command from `arguments.jvm`/`arguments.game` → spawn Java 25 with
-   `--gameDir instances/<id>/minecraft` → stream logs → hide the launcher.
