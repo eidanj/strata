@@ -1,0 +1,24 @@
+{
+  "id": "recording",
+  "name": "Recording",
+  "order": 4,
+  "description": "Frame rate capped so it stays flat while OBS or another recorder runs alongside the game.",
+  "memoryMb": 4096,
+  "jvmArgs": [
+    "-XX:+UseG1GC",
+    "-XX:MaxGCPauseMillis=30",
+    "-XX:+ParallelRefProcEnabled",
+    "-XX:+UseCompactObjectHeaders"
+  ],
+  "options": {
+    "renderDistance": 12,
+    "simulationDistance": 8,
+    "maxFps": 144,
+    "enableVsync": false,
+    "particles": 1,
+    "entityShadows": true,
+    "biomeBlendRadius": 2,
+    "mipmapLevels": 4,
+    "entityDistanceScaling": 1.0
+  }
+}

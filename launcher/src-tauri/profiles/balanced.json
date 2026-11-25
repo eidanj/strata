@@ -1,0 +1,24 @@
+{
+  "id": "balanced",
+  "name": "Balanced",
+  "order": 2,
+  "description": "Good-looking chunks at a steady frame rate. The default.",
+  "memoryMb": 3072,
+  "jvmArgs": [
+    "-XX:+UseG1GC",
+    "-XX:MaxGCPauseMillis=50",
+    "-XX:+ParallelRefProcEnabled",
+    "-XX:+UseCompactObjectHeaders"
+  ],
+  "options": {
+    "renderDistance": 12,
+    "simulationDistance": 8,
+    "maxFps": 260,
+    "enableVsync": false,
+    "particles": 1,
+    "entityShadows": true,
+    "biomeBlendRadius": 2,
+    "mipmapLevels": 4,
+    "entityDistanceScaling": 1.0
+  }
+}

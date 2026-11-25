@@ -1,0 +1,24 @@
+{
+  "id": "competitive",
+  "name": "Competitive PvP",
+  "order": 3,
+  "description": "Low-pause garbage collection for even frame times in fights, with minimal particles. Uses a bit more memory.",
+  "memoryMb": 4096,
+  "jvmArgs": [
+    "-XX:+UseZGC"
+  ],
+  "alternatives": {
+    "shenandoah": ["-XX:+UseShenandoahGC", "-XX:ShenandoahGCMode=generational"]
+  },
+  "options": {
+    "renderDistance": 8,
+    "simulationDistance": 6,
+    "maxFps": 260,
+    "enableVsync": false,
+    "particles": 2,
+    "entityShadows": false,
+    "biomeBlendRadius": 0,
+    "mipmapLevels": 0,
+    "entityDistanceScaling": 1.0
+  }
+}

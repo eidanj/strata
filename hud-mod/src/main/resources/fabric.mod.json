@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "strata-hud",
+  "version": "${version}",
+  "name": "Strata HUD",
+  "description": "Keystrokes, CPS, FPS, ping, armor and held-item status, toggle sprint and a custom crosshair. Press Right Shift to arrange.",
+  "authors": ["Strata"],
+  "license": "MIT",
+  "icon": "assets/strata-hud/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["gg.strata.hud.StrataHud"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

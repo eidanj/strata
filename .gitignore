@@ -1,0 +1,12 @@
+node_modules/
+launcher/dist/
+launcher/src-tauri/target/
+launcher/src-tauri/gen/
+hud-mod/build/
+hud-mod/run/
+hud-mod/.gradle/
+.gradle/
+.idea/
+*.iml
+.DS_Store
+*.part
