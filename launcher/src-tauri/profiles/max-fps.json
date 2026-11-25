@@ -1,0 +1,24 @@
+{
+  "id": "max-fps",
+  "name": "Max FPS",
+  "order": 1,
+  "description": "Short render distance and no visual extras. For low-end machines or chasing the highest number.",
+  "memoryMb": 3072,
+  "jvmArgs": [
+    "-XX:+UseG1GC",
+    "-XX:MaxGCPauseMillis=40",
+    "-XX:+ParallelRefProcEnabled",
+    "-XX:+UseCompactObjectHeaders"
+  ],
+  "options": {
+    "renderDistance": 8,
+    "simulationDistance": 6,
+    "maxFps": 260,
+    "enableVsync": false,
+    "particles": 2,
+    "entityShadows": false,
+    "biomeBlendRadius": 0,
+    "mipmapLevels": 0,
+    "entityDistanceScaling": 0.75
+  }
+}
