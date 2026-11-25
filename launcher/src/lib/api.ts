@@ -127,10 +127,16 @@ export interface ModuleConfig {
   [extra: string]: unknown;
 }
 
+export interface MenuConfig {
+  enabled: boolean;
+  motion: boolean;
+}
+
 export interface HudConfig {
   version: number;
   theme: Record<string, string | boolean>;
   crosshair: CrosshairConfig;
+  menu: MenuConfig;
   modules: Record<string, ModuleConfig>;
 }
 

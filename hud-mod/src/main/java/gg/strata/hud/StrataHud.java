@@ -8,6 +8,9 @@ import com.mojang.blaze3d.platform.InputConstants;
 
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.screens.TitleScreen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -16,9 +19,12 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
+import net.fabricmc.fabric.api.client.screen.v1.Screens;
 
 import gg.strata.hud.config.HudConfig;
 import gg.strata.hud.hud.HudRenderer;
+import gg.strata.hud.menu.StrataTitleScreen;
 import gg.strata.hud.render.CrosshairRenderer;
 import gg.strata.hud.render.Draw;
 import gg.strata.hud.render.Game;
@@ -57,6 +63,21 @@ public final class StrataHud implements ClientModInitializer {
 				vanilla -> (graphics, delta) -> CrosshairRenderer.extract(graphics, delta, vanilla));
 
 		ClientLifecycleEvents.CLIENT_STARTED.register(StrataHud::applyGameOptions);
+
+		// Swap the vanilla title screen for Strata's menu. When the player has
+		// chosen the classic menu, give it a small button to come back instead.
+		ScreenEvents.AFTER_INIT.register((client, screen, width, height) -> {
+			if (!(screen instanceof TitleScreen)) return;
+			if (config.menu.enabled) {
+				client.execute(() -> client.gui.setScreen(new StrataTitleScreen()));
+			} else {
+				Screens.getWidgets(screen).add(Button.builder(Component.literal("Strata menu"), b -> {
+					config.menu.enabled = true;
+					save();
+					client.gui.setScreen(new StrataTitleScreen());
+				}).bounds(4, 4, 80, 20).build());
+			}
+		});
 
 		ClientTickEvents.END_CLIENT_TICK.register(mc -> {
 			while (EDITOR_KEY.consumeClick()) {

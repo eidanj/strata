@@ -24,14 +24,63 @@
     "targetColor": "#FFFF5A5A",
     "cooldownIndicator": true
   },
+  "menu": {
+    "enabled": true,
+    "motion": true
+  },
   "modules": {
-    "fps": { "enabled": true, "x": 0.0, "y": 0.0, "scale": 1.0 },
-    "cps": { "enabled": true, "x": 0.0, "y": 0.045, "scale": 1.0 },
-    "ping": { "enabled": true, "x": 0.0, "y": 0.09, "scale": 1.0 },
-    "keystrokes": { "enabled": true, "x": 0.0, "y": 0.62, "scale": 1.0, "showMouse": true, "showSpace": true },
-    "armor": { "enabled": true, "x": 1.0, "y": 0.62, "scale": 1.0, "layout": "vertical", "durability": "percent" },
-    "held": { "enabled": true, "x": 1.0, "y": 0.92, "scale": 1.0, "showCount": true },
-    "togglesprint": { "enabled": true, "x": 0.0, "y": 1.0, "scale": 1.0 },
-    "coords": { "enabled": false, "x": 0.5, "y": 0.0, "scale": 1.0 }
+    "fps": {
+      "enabled": true,
+      "x": 0.0,
+      "y": 0.0,
+      "scale": 1.0
+    },
+    "cps": {
+      "enabled": true,
+      "x": 0.0,
+      "y": 0.045,
+      "scale": 1.0
+    },
+    "ping": {
+      "enabled": true,
+      "x": 0.0,
+      "y": 0.09,
+      "scale": 1.0
+    },
+    "keystrokes": {
+      "enabled": true,
+      "x": 0.0,
+      "y": 0.62,
+      "scale": 1.0,
+      "showMouse": true,
+      "showSpace": true
+    },
+    "armor": {
+      "enabled": true,
+      "x": 1.0,
+      "y": 0.62,
+      "scale": 1.0,
+      "layout": "vertical",
+      "durability": "percent"
+    },
+    "held": {
+      "enabled": true,
+      "x": 1.0,
+      "y": 0.92,
+      "scale": 1.0,
+      "showCount": true
+    },
+    "togglesprint": {
+      "enabled": true,
+      "x": 0.0,
+      "y": 1.0,
+      "scale": 1.0
+    },
+    "coords": {
+      "enabled": false,
+      "x": 0.5,
+      "y": 0.0,
+      "scale": 1.0
+    }
   }
 }

@@ -93,6 +93,11 @@ Fabric API. In game:
 - **Crosshair** (button in the editor) opens the crosshair editor with a 5x live preview.
 - Overlays: FPS, CPS, Ping, Keystrokes (with CPS under the mouse buttons), Armor status,
   Held items (durability or total count carried), Toggle sprint, Coordinates.
+- **Main menu**: Strata replaces the title screen with its own (side panel, drifting rock
+  layers that lean toward the mouse). "Use classic menu" switches back, and the vanilla
+  menu then gets a small "Strata menu" button to return. Both settings, plus turning the
+  motion off, are also on the launcher's HUD tab. Code is in `hud-mod/.../menu/`;
+  `design/preview_menu.py` renders an approximate preview of it.
 
 **Important:** I couldn't compile the mod against real 26.3 in my environment (Mojang's
 and Fabric's servers were unreachable). Every Fabric API call and the trickier vanilla
@@ -100,7 +105,8 @@ names (`GuiGraphicsExtractor.text/item/itemDecorations`, `extractRenderState`,
 `extractBackground`, `MouseButtonEvent`, `gui.setScreen`, SDL scancodes) were checked
 against Fabric API's and JEI's 26.3 source, and the mod compiles against stand-ins for
 that API. If the first real build reports a missing method, it will almost certainly be in
-`render/Draw.java` or `render/Game.java`, which hold every version-sensitive call.
+`render/Draw.java`, `render/Game.java` or `menu/Menus.java`, which hold every
+version-sensitive call.
 
 The crosshair geometry in `CrosshairRenderer.java` and `launcher/src/lib/crosshair.ts`
 was checked to produce identical pixels across 360 configurations. Change them together.

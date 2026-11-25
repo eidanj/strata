@@ -32,6 +32,7 @@ public final class HudConfig {
 	public int version = 1;
 	public Theme theme = new Theme();
 	public Crosshair crosshair = new Crosshair();
+	public Menu menu = new Menu();
 	public Map<String, ModuleSettings> modules = new LinkedHashMap<>();
 
 	public static final class Theme {
@@ -58,6 +59,13 @@ public final class HudConfig {
 		public boolean colorOnTarget = true;
 		public String targetColor = "#FFFF5A5A";
 		public boolean cooldownIndicator = true;
+	}
+
+	/** The Strata main menu that replaces the vanilla title screen. */
+	public static final class Menu {
+		public boolean enabled = true;
+		/** Rising, drifting layers and mouse parallax. Off = a still image. */
+		public boolean motion = true;
 	}
 
 	/** Position is a fraction (0..1) of the free space, so layouts survive resolution changes. */

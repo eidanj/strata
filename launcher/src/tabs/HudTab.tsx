@@ -47,6 +47,8 @@ export function HudTab({ layer }: { layer: Layer }) {
   const c = draft.crosshair;
 
   const setCross = (patch: Partial<CrosshairConfig>) => setDraft({ ...draft, crosshair: { ...c, ...patch } });
+  const menu = draft.menu ?? { enabled: true, motion: true };
+  const setMenu = (patch: Partial<typeof menu>) => setDraft({ ...draft, menu: { ...menu, ...patch } });
   const setModule = (id: string, patch: Record<string, unknown>) =>
     setDraft({ ...draft, modules: { ...draft.modules, [id]: { ...draft.modules[id]!, ...patch } } });
 
@@ -139,6 +141,18 @@ export function HudTab({ layer }: { layer: Layer }) {
                   onClick={() => setCross({ cooldownIndicator: !c.cooldownIndicator })}
                 />
               </Row>
+            </section>
+
+            <section>
+              <h2 className="group__title">Main menu</h2>
+              <Row label="Strata main menu">
+                <button className="switch" role="switch" aria-checked={menu.enabled} onClick={() => setMenu({ enabled: !menu.enabled })} />
+              </Row>
+              {menu.enabled && (
+                <Row label="Moving background">
+                  <button className="switch" role="switch" aria-checked={menu.motion} onClick={() => setMenu({ motion: !menu.motion })} />
+                </Row>
+              )}
             </section>
 
             <section>
